@@ -1,0 +1,10 @@
+package test6;
+
+public class Q2InterfaceExtendsAnotherInterface {
+
+	public static void main(String[] args) {
+		// Q2 Interface Extends Another Interface
+
+	}
+
+}

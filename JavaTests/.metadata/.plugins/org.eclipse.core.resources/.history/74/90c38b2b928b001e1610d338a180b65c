@@ -1,0 +1,57 @@
+package test7;
+
+import java.io.FileOutputStream;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Q1FlowerNameExcel {
+
+	public static void main(String[] args) {
+		// Q1 Flower Name Excel Method 2
+		// Create a new workbook
+		Workbook wb = new XSSFWorkbook();
+
+		// Create a sheet in the workbook
+		Sheet sh = wb.createSheet("Flowers");
+
+		// List of 20 flower names
+		String[] flowers = {
+				"Vegitable1", "Vegitable2", "Vegitable3", "Vegitable4", "Vegitable5",
+				"Vegitable6", "Vegitable7", "Vegitable8", "Vegitable9", "Vegitable10",
+				"Vegitable11", "Vegitable12", "Vegitable13", "Vegitable14", "Vegitable15",
+				"Vegitable16", "Vegitable17", "Vegitable18", "Vegitable19", "Vegitable20"
+		};
+
+		// Use a for loop to write each flower name in the first column
+		for (int i = 1; i < flowers.length; i++) {
+			Row row = sh.createRow(i);
+			Cell cell = row.createCell(0);
+			cell.setCellValue(flowers[i]);
+		}
+
+		// Save the workbook to a file
+		try (FileOutputStream fileOut = new FileOutputStream("D:\\GitRepository\\flowers.xlsx"))
+		{
+			wb.write(fileOut);
+			System.out.println("Excel file has been created successfully!");
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			// Close the workbook to release resources
+			try
+			{
+				wb.close();
+			} catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+}

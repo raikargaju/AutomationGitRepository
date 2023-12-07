@@ -1,0 +1,12 @@
+package test6;
+
+public class Q1MultipleInheritance {
+
+	public static void main(String[] args) {
+		// Q1 Multiple Inheritance
+		interface A
+		{
+			abstract display(String name);
+		}
+	}
+}

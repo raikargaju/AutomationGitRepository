@@ -1,0 +1,38 @@
+package test7;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+public class Q5CityName2ndHalfExcel {
+
+	public static void main(String[] args) {
+		// Q4 City Name 2nd Half Excel
+        try {
+            FileInputStream fileInputStream = new FileInputStream("E:\\JavaTests\\AutomationTests\\src\\test7\\City.xlsx");
+            Workbook workbook = WorkbookFactory.create(fileInputStream);
+            Sheet sheet1 = workbook.getSheetAt(0);
+            int rowCount = sheet1.getPhysicalNumberOfRows();
+            int startRow = rowCount / 2;
+            Workbook newWorkbook = new XSSFWorkbook();
+            Sheet sheet2 = newWorkbook.createSheet("Sheet2");
+            for (int i = startRow; i < rowCount; i++) {
+                Row sourceRow = sheet1.getRow(i);
+                Row destRow = sheet2.createRow(i - startRow);
+                Cell sourceCell = sourceRow.getCell(0);
+                String cellValue = (sourceCell == null) ? "" : sourceCell.getStringCellValue();
+                Cell destCell = destRow.createCell(0);
+                destCell.setCellValue(cellValue);
+            }
+            FileOutputStream fileOutputStream = new FileOutputStream("output_excel_file.xlsx");
+            newWorkbook.write(fileOutputStream);
+            fileInputStream.close();
+            fileOutputStream.close();
+
+            System.out.println("Data copied successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
+}

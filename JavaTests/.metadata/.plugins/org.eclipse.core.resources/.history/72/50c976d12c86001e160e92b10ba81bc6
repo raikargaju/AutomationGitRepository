@@ -1,0 +1,19 @@
+package test6;
+abstract class A
+{
+	A (String name)
+	{
+		System.out.println(name);
+	}
+	static
+	{
+		
+	}
+}
+public class Q3AbstractClass {
+
+	public static void main(String[] args) {
+		// Q3 Abstract Class contains Constructors, Static block & Instance block.
+		
+	}
+}

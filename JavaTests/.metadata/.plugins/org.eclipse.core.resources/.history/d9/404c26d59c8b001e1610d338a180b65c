@@ -1,0 +1,54 @@
+package test7;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import org.apache.poi.ss.usermodel.*;
+public class Q4CityName2ndHalfExcel {
+
+	public static void main(String[] args) {
+		// Q4 City Name 2nd Half Excel
+        try {
+            FileInputStream fileInputStream = new FileInputStream("your_excel_file.xlsx");
+            Workbook workbook = WorkbookFactory.create(fileInputStream);
+
+            // Get the first sheet (Sheet1)
+            Sheet sheet1 = workbook.getSheetAt(0);
+
+            // Get the number of rows in Sheet1
+            int rowCount = sheet1.getPhysicalNumberOfRows();
+
+            // Calculate the starting row for the second half
+            int startRow = rowCount / 2;
+
+            // Create a new workbook for Sheet2
+            Workbook newWorkbook = new XSSFWorkbook();
+            Sheet sheet2 = newWorkbook.createSheet("Sheet2");
+
+            // Copy the second half of content from Sheet1 to Sheet2
+            for (int i = startRow; i < rowCount; i++) {
+                Row sourceRow = sheet1.getRow(i);
+                Row destRow = sheet2.createRow(i - startRow);
+
+                // Get the cell value from the first column of Sheet1
+                Cell sourceCell = sourceRow.getCell(0);
+                String cellValue = (sourceCell == null) ? "" : sourceCell.getStringCellValue();
+
+                // Create a new cell in the first column of Sheet2 and set the value
+                Cell destCell = destRow.createCell(0);
+                destCell.setCellValue(cellValue);
+            }
+
+            // Save the changes to a new Excel file
+            FileOutputStream fileOutputStream = new FileOutputStream("output_excel_file.xlsx");
+            newWorkbook.write(fileOutputStream);
+
+            // Close the input and output streams
+            fileInputStream.close();
+            fileOutputStream.close();
+
+            System.out.println("Data copied successfully from Sheet1 to Sheet2.");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
+}
