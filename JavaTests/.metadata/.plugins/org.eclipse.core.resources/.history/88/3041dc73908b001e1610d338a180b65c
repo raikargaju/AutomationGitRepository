@@ -1,9 +1,0 @@
-package assignmentExcel;
-
-public class Q0FlowerNameExcel {
-
-	public static void main(String[] args) {
-		// Q0 Flower Name Excel method 1
-
-	}
-}

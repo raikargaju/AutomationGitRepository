@@ -45,8 +45,7 @@ public class Q3FlowersNameReadAndWriteReverseExcel {
 				{
 					rowsh2 = sh2.createRow(9);
 				}
-				int cc = rowsh1.getPhysicalNumberOfCells();
-					cellsh1 = rowsh1.getCell(0);
+				cellsh1 = rowsh1.getCell(0);
 					cellsh2 = rowsh2.getCell(r);
 					if(cellsh2 == null)
 					{
