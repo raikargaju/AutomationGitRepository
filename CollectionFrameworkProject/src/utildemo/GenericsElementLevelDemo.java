@@ -1,4 +1,4 @@
-package com.sgtesting.utildemo;
+package utildemo;
 class Sample
 {
 	public static <E> void readElements(E[] elements)

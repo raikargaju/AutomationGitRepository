@@ -1,4 +1,4 @@
-package com.sgtesting.excel;
+package excel;
 
 import java.io.FileOutputStream;
 

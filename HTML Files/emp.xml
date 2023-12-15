@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<employees>
+	<employee empid = "7011">
+		<firstname>Nandan</firstname>
+		<jobname>Operator</jobname>
+		<location>Bangalore</location>
+	</employee>
+	<employee empid = "7012">
+		<firstname>Ashok</firstname>
+		<jobname>Mechanic</jobname>
+		<location>Mangalore</location>
+	</employee>
+	<employee empid = "7013">
+		<firstname>Nagaraj</firstname>
+		<jobname>Developer</jobname>
+		<location>Hubballi</location>
+	</employee>
+	<employee empid = "7014">
+		<firstname>Praveen</firstname>
+		<jobname>Engineer</jobname>
+		<location>Gadag</location>
+	</employee>
+</employees>

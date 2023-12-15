@@ -1,4 +1,4 @@
-package com.sgtesting.utildemo;
+package utildemo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
