@@ -1,6 +1,5 @@
-package com.sgtesting.excel;
+package excel;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 import org.apache.poi.ss.usermodel.Cell;

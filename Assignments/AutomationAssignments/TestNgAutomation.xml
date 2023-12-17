@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="ActiTime Scenarios">
+	<test name="Scenarios">
+		<classes>
+			<class name="assignmentWebAutomationTestNG.QAssignment1"></class>
+			<!-- <class name="assignmentWebAutomationTestNG.QAssignment2"></class>
+			<class name="assignmentWebAutomationTestNG.QAssignment3"></class>
+			<class name="assignmentWebAutomationTestNG.QAssignment4"></class>
+			<class name="assignmentWebAutomationTestNG.QAssignment5"></class>
+			<class name="assignmentWebAutomationTestNG.QAssignment6"></class>
+			<class name="assignmentWebAutomationTestNG.QAssignment7"></class>
+			<class name="assignmentWebAutomationTestNG.QAssignment8"></class>
+			<class name="assignmentWebAutomationTestNG.QAssignment9"></class> -->
+		</classes>
+	</test>
+</suite>

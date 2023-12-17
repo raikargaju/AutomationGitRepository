@@ -9,13 +9,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LoginLogoutScenario {
-	public static WebDriver oBrowser=null;
+	public static WebDriver oBrowser = null;
 	@Test(priority = 1)
 	public void launchBrowser()
 	{
 		try
 		{
-			oBrowser=new ChromeDriver();
+			oBrowser = new ChromeDriver();
 			Assert.assertNotNull(oBrowser);
 		}catch (Exception e) 
 		{
@@ -29,7 +29,7 @@ public class LoginLogoutScenario {
 		try
 		{
 			oBrowser.navigate().to(url);
-			String title=oBrowser.getTitle();
+			String title = oBrowser.getTitle();
 			Assert.assertEquals("actiTIME - Login", title);
 		}catch (Exception e) 
 		{
@@ -46,7 +46,7 @@ public class LoginLogoutScenario {
 			oBrowser.findElement(By.name("pwd")).sendKeys(pwd);
 			oBrowser.findElement(By.xpath("//div[text()='Login ']")).click();
 			Thread.sleep(5000);
-			WebElement oEle=oBrowser.findElement(By.xpath("//td[text()='Enter Time-Track']"));
+			WebElement oEle = oBrowser.findElement(By.xpath("//td[text()='Enter Time-Track']"));
 			Assert.assertTrue(oEle.isDisplayed());
 		}catch (Exception e) 
 		{
@@ -60,8 +60,8 @@ public class LoginLogoutScenario {
 		try
 		{
 			oBrowser.findElement(By.id("gettingStartedShortcutsPanelId")).click();
-			Thread.sleep(2000);
-			String attributeValue=oBrowser.findElement(By.id("gettingStartedShortcutsMenuWrapper")).getAttribute("style");
+			Thread.sleep(5000);
+			String attributeValue = oBrowser.findElement(By.id("gettingStartedShortcutsMenuWrapper")).getAttribute("style");
 			Assert.assertTrue(attributeValue.equals("display: none;"));
 		}catch (Exception e) 
 		{
@@ -75,8 +75,8 @@ public class LoginLogoutScenario {
 		try
 		{
 			oBrowser.findElement(By.linkText("Logout")).click();
-			Thread.sleep(2000);
-			String title=oBrowser.getTitle();
+			Thread.sleep(5000);
+			String title = oBrowser.getTitle();
 			Assert.assertEquals("actiTIME - Login", title);
 		}catch (Exception e) 
 		{
@@ -88,11 +88,11 @@ public class LoginLogoutScenario {
 	public void closeApplication()
 	{
 		oBrowser.quit();
-		oBrowser=null;
+		oBrowser = null;
 		Assert.assertNull(oBrowser);
 	}
 	
-	@DataProvider(name="navigateURL")
+	@DataProvider(name = "navigateURL")
 	public Object[][] getAppURL()
 	{
 		return new Object[][] {{"http://localhost/login.do"}};

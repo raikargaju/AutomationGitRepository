@@ -1,4 +1,4 @@
-package com.sgtesting.utildemo;
+package utildemo;
 public class WrapperClassUnBoxingDemo {
 	public static void main(String[] args) {
 		unBoxingDemo();

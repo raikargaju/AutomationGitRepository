@@ -1,4 +1,4 @@
-package com.sgtesting.iodemo;
+package iodemo;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

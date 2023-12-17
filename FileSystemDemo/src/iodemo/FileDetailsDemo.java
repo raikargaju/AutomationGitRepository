@@ -1,4 +1,4 @@
-package com.sgtesting.iodemo;
+package iodemo;
 import java.io.File;
 public class FileDetailsDemo {
 	public static void main(String[] args) {
